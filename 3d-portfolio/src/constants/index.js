@@ -252,18 +252,18 @@ export const calculateSizes = (isSmall, isMobile, isTablet) => {
     hackerDeskScale: isSmall ? 0.05 : isMobile ? 0.06 : 0.065,
     hackerDeskPosition: isMobile ? [0.5, -4, 0] : [0.25, -3, 0],
 
-    explorerDeskScale: 5.2,
-    explorerDeskPosition: [-0.3, 1.1, 0.1],
+    explorerDeskScale: isSmall ? 3.5 : 5.2,
+    explorerDeskPosition: isSmall ? [-0.3, 0, 0.1] : [-0.3, 1.1, 0.1],
     groundScale: 0.08,
-    explorerGroundPosition: [0.1, -2.7, -1.5],
+    explorerGroundPosition: isSmall ? [0.1, -2.2, -1.5] : [0.1, -2.7, -1.5],
 
-    readerDeskScale: 0.07,
-    readerDeskPosition: [-4.5, -2.6, 0],
-    readerGroundPosition: [-0.3, -1.7, -2.7],
+    readerDeskScale: isSmall ? 0.05 : 0.07,
+    readerDeskPosition: isSmall ? [-3, -3.5, 0] : [-4.5, -3.5, 0],
+    readerGroundPosition: isSmall ? [-0.3, -2.4, -2.7] : [-0.3, -2.4, -2.7],
 
-    tinkererDeskScale: 3.1,
-    tinkererDeskPosition: [-0.1, -1.5, 0],
-    tinkererGroundPosition: [-0.3, -0.5, -1.9],
+    tinkererDeskScale: isSmall ? 2.5 : 3.1,
+    tinkererDeskPosition: isSmall ? [-0.1, -3.2, 0] : [-0.1, -1.5, 0],
+    tinkererGroundPosition: isSmall ? [-0.3, -2.2, -1.9] : [-0.3, -0.5, -1.9],
 
     cubePosition: isSmall
       ? [4, -5, 0]
@@ -285,7 +285,7 @@ export const calculateSizes = (isSmall, isMobile, isTablet) => {
       ? [-10, 10, 0]
       : isTablet
       ? [-12, 10, 0]
-      : [-24, 10, 0],
+      : [-20, 10, 0],
     targetPosition: isSmall
       ? [-5, -10, -10]
       : isMobile

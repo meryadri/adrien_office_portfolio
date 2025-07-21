@@ -26,10 +26,7 @@ const Hero = () => {
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
   const sizes = calculateSizes(isSmall, isMobile, isTablet);
 
-  // Add state for desk selection
-  const [deskType, setDeskType] = useState("developer,");
-
-  // Notification state
+  const [deskType, setDeskType] = useState("developer");
   const [showNotification, setShowNotification] = useState(true);
 
   useEffect(() => {
