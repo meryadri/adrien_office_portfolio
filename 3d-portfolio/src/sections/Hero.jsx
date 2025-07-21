@@ -1,4 +1,4 @@
-import { Suspense, useState } from "react";
+import { Suspense, useState, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 import { PerspectiveCamera } from "@react-three/drei";
 // import { Leva, useControls } from "leva";
@@ -18,36 +18,33 @@ import ReactLogo from "../components/ReactLogo";
 import Cube from "../components/Cube";
 import Rings from "../components/Rings";
 import Button from "../components/Button";
+import DeskTypeDropdown from "../components/DeskTypeDropdown";
 
 const Hero = () => {
-  // const x = useControls("Hacker Room", {
-  //   positionX: { value: 2.5, min: -10, max: 10 },
-  //   positionY: { value: 2.5, min: -10, max: 10 },
-  //   positionZ: { value: 2.5, min: -10, max: 10 },
-  //   rotationX: { value: 0, min: -10, max: 10 },
-  //   rotationY: { value: 0, min: -10, max: 10 },
-  //   rotationZ: { value: 0, min: -10, max: 10 },
-  //   scale: { value: 1, min: 0.01, max: 10 },
-  // });
-
-  // const y = useControls("ground", {
-  //   positionX: { value: 2.5, min: -10, max: 10 },
-  //   positionY: { value: 2.5, min: -10, max: 10 },
-  //   positionZ: { value: 2.5, min: -10, max: 10 },
-  //   scale: { value: 1, min: 0.01, max: 5 },
-  // });
-
   const isSmall = useMediaQuery({ maxWidth: 440 });
   const isMobile = useMediaQuery({ maxWidth: 768 });
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
   const sizes = calculateSizes(isSmall, isMobile, isTablet);
 
   // Add state for desk selection
-  const [deskType, setDeskType] = useState("programmer");
-  const [hoveredType, setHoveredType] = useState(null);
+  const [deskType, setDeskType] = useState("developer,");
+
+  // Notification state
+  const [showNotification, setShowNotification] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShowNotification(false), 10000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <section className="min-h-screen w-full flex-col relative" id="home">
+      {/* Notification */}
+      {showNotification && (
+        <div className="fixed top-8 left-1/2 -translate-x-1/2 z-50 bg-blue-600 text-white px-6 py-3 rounded shadow-lg">
+          Welcome to Adrien's portfolio!
+        </div>
+      )}
       <div className="w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3">
         <p className="sm:text-3xl text-2xl font-medium text-white text-center font-generalsans">
           My name is Adrien
@@ -57,27 +54,7 @@ const Hero = () => {
           <p className="hero_tag text-gray_gradient whitespace-nowrap">
             I am a{" "}
           </p>
-          <div className="flex flex-row flex-nowrap justify-center gap-4">
-            {["developer,", "tinkerer,", "learner,", "traveller"].map(
-              (type) => (
-                <span
-                  key={type}
-                  className={` hero_tag text-gray_gradient cursor-pointer transition-colors whitespace-nowrap rounded px-2 py-1 ${
-                    deskType === type
-                      ? "font-bold text-blue-500 bg-blue-50"
-                      : ""
-                  } ${hoveredType === type ? "text-pink-500 bg-pink-50" : ""}`}
-                  onMouseEnter={() => {
-                    setDeskType(type);
-                    setHoveredType(type);
-                  }}
-                  onMouseLeave={() => setHoveredType(null)}
-                >
-                  {type}
-                </span>
-              )
-            )}
-          </div>
+          <DeskTypeDropdown deskType={deskType} setDeskType={setDeskType} />
         </div>
       </div>
       <div className="w-full h-full absolute inset-0">
@@ -86,14 +63,14 @@ const Hero = () => {
           <Suspense fallback={<CanvasLoader />}>
             <PerspectiveCamera makeDefault position={[0, 0, 20]} />
             <HeroCamera isMobile={isMobile}>
-              {deskType === "developer," && (
+              {deskType === "developer" && (
                 <HackerRoom
                   position={sizes.hackerDeskPosition}
                   rotation={[0.4, -3.2, 0]}
                   scale={sizes.hackerDeskScale}
                 />
               )}
-              {deskType === "tinkerer," && (
+              {deskType === "tinkerer" && (
                 <>
                   <TinkererRoom
                     position={sizes.tinkererDeskPosition}
@@ -107,7 +84,7 @@ const Hero = () => {
                   />
                 </>
               )}
-              {deskType === "learner," && (
+              {deskType === "learner" && (
                 <>
                   <ReaderRoom
                     position={sizes.readerDeskPosition}
