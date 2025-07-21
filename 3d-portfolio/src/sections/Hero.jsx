@@ -44,6 +44,7 @@ const Hero = () => {
 
   // Add state for desk selection
   const [deskType, setDeskType] = useState("programmer");
+  const [hoveredType, setHoveredType] = useState(null);
 
   return (
     <section className="min-h-screen w-full flex-col relative" id="home">
@@ -54,18 +55,23 @@ const Hero = () => {
         </p>
         <div className="absolute top-8 right-0 left-0 w-full z-10 c-space flex flex-row flex-nowrap justify-center gap-4">
           <p className="hero_tag text-gray_gradient whitespace-nowrap">
-            {" "}
             I am a{" "}
           </p>
           <div className="flex flex-row flex-nowrap justify-center gap-4">
-            {["programmer,", "tinkerer,", "learner,", "traveller"].map(
+            {["developer,", "tinkerer,", "learner,", "traveller"].map(
               (type) => (
                 <span
                   key={type}
-                  className={`hero_tag text-gray_gradient cursor-pointer transition-colors whitespace-nowrap ${
-                    deskType === type ? "font-bold text-blue-500" : ""
-                  }`}
-                  onMouseEnter={() => setDeskType(type)}
+                  className={` hero_tag text-gray_gradient cursor-pointer transition-colors whitespace-nowrap rounded px-2 py-1 ${
+                    deskType === type
+                      ? "font-bold text-blue-500 bg-blue-50"
+                      : ""
+                  } ${hoveredType === type ? "text-pink-500 bg-pink-50" : ""}`}
+                  onMouseEnter={() => {
+                    setDeskType(type);
+                    setHoveredType(type);
+                  }}
+                  onMouseLeave={() => setHoveredType(null)}
                 >
                   {type}
                 </span>
@@ -80,7 +86,7 @@ const Hero = () => {
           <Suspense fallback={<CanvasLoader />}>
             <PerspectiveCamera makeDefault position={[0, 0, 20]} />
             <HeroCamera isMobile={isMobile}>
-              {deskType === "programmer," && (
+              {deskType === "developer," && (
                 <HackerRoom
                   position={sizes.hackerDeskPosition}
                   rotation={[0.4, -3.2, 0]}
