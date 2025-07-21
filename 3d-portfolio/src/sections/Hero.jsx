@@ -17,10 +17,18 @@ import Target from "../components/target";
 import ReactLogo from "../components/ReactLogo";
 import Cube from "../components/Cube";
 import Rings from "../components/Rings";
+import Bicycle from "../components/Bicycle";
 import Button from "../components/Button";
 import DeskTypeDropdown from "../components/DeskTypeDropdown";
 
 const Hero = () => {
+  // const pos = useControls({
+  //   x: { value: 0, min: -17, max: 17 },
+  //   y: { value: 0, min: -10, max: 10 },
+  //   z: { value: 0, min: -10, max: 10 },
+  //   sc: { value: 1, min: 0.1, max: 5 },
+  // });
+
   const isSmall = useMediaQuery({ maxWidth: 440 });
   const isMobile = useMediaQuery({ maxWidth: 768 });
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
@@ -116,11 +124,22 @@ const Hero = () => {
               <Cube position={sizes.cubePosition} />
               <Rings position={sizes.ringPosition} />
             </group>
-
             <ambientLight intensity={1} />
             <directionalLight position={[10, 10, 10]} intensity={1} />
           </Suspense>
         </Canvas>
+        {/* <Canvas>
+          <Suspense fallback={<CanvasLoader />}>
+            <PerspectiveCamera makeDefault position={[0, 0, 0]} />
+            <HeroCamera isMobile={isMobile}>
+              <group>
+                <Bicycle position={[pos.x, pos.y, pos.z]} scale={pos.sc} />
+              </group>
+            </HeroCamera>
+            <ambientLight intensity={2} />
+            <directionalLight position={[10, 10, 10]} intensity={3} />
+          </Suspense>
+        </Canvas> */}
       </div>
       <div className="absolute bottom-7 right-0 left-0 w-full z-10 c-space">
         <a href="#about" className="w-fit">
