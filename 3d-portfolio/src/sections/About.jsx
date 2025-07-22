@@ -1,27 +1,87 @@
+import { Suspense } from "react";
 import Globe from "react-globe.gl";
+import { Canvas } from "@react-three/fiber";
+import { PerspectiveCamera, Center, OrbitControls } from "@react-three/drei";
+import CanvasLoader from "../components/CanvasLoader";
+
+import { Leva, useControls } from "leva";
 import Button from "../components/Button";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
+import Coffee from "../components/Objects/Coffee";
+import Toolbox from "../components/Objects/Toolbox";
 
 const About = () => {
   const [hasCopied, setHasCopied] = useState(false);
+  const globeRef = useRef();
+
+  const pos = useControls({
+    x: { value: 0, min: -8, max: 8 },
+    y: { value: 0, min: -10, max: 10 },
+    z: { value: 0, min: -10, max: 10 },
+    rx: { value: 0, min: -Math.PI, max: Math.PI },
+    ry: { value: 0, min: -Math.PI, max: Math.PI },
+    rz: { value: 0, min: -Math.PI, max: Math.PI },
+    sc: { value: 1, min: 0.1, max: 20 },
+  });
+
+  useEffect(() => {
+    let animationFrame;
+    const animate = () => {
+      if (globeRef.current) {
+        globeRef.current.controls().autoRotate = true;
+        globeRef.current.controls().autoRotateSpeed = 0.8;
+      }
+      animationFrame = requestAnimationFrame(animate);
+    };
+    animate();
+    return () => cancelAnimationFrame(animationFrame);
+  }, []);
+
   const handleCopy = () => {
     navigator.clipboard.writeText("adrien.mery@mail.utoronto.ca");
-    // alert("Email copied to clipboard!");
     setHasCopied(true);
     setTimeout(() => {
       setHasCopied(false);
     }, 2000);
   };
+
   return (
     <section className="c-space my-20" id="about">
       <div className="grid xl:grid-cols-3 xl:grid-rows-6 md:grid-cols-2 grid-cols-1 gap-5 h-full">
         <div className="col-span-1 xl:row-span-3 ">
           <div className="grid-container">
-            <img
-              src="/assets/grid1.png"
-              alt="grid-1"
-              className="w-full sm:h-[276px] h-fit object-contain"
-            />
+            <div
+              className="flex justify-center items-center"
+              style={{ minHeight: 250, height: 250 }}
+            >
+              {/* <Leva /> */}
+              <Canvas
+                className="w-full h-full"
+                style={{
+                  width: "250px",
+                  height: "250px",
+                }}
+              >
+                <ambientLight intensity={1} />
+                <directionalLight position={[10, 10, 10]} intensity={1} />
+                <Center>
+                  <Suspense fallback={<CanvasLoader />}>
+                    <Coffee
+                      position={[pos.x, pos.y, pos.z]}
+                      rotation={[pos.rx, pos.ry, pos.rz]}
+                      scale={pos.sc}
+                    />
+                    {/* <Coffee
+                      position={[0, 0, -1]}
+                      rotation={[0.66, -0.4, 0.06]}
+                      scale={3.2}
+                    /> */}
+                  </Suspense>
+                </Center>
+
+                <OrbitControls maxPolarAngle={Math.PI / 2} />
+              </Canvas>
+            </div>
             <div>
               <p className="grid-headtext"> Hi, I'm Adrien</p>
               <p className="grid-subtext">
@@ -34,11 +94,37 @@ const About = () => {
         </div>
         <div className="col-span-1 xl:row-span-3 ">
           <div className="grid-container">
-            <img
-              src="/assets/grid2.png"
-              alt="grid-2"
-              className="w-full sm:w-[276px] h-fit object-contain"
-            />
+            <div
+              className="flex justify-center items-center"
+              style={{ minHeight: 250, height: 250 }}
+            >
+              <Leva />
+              <Canvas
+                className="w-full h-full"
+                style={{
+                  width: "250px",
+                  height: "250px",
+                }}
+              >
+                <Suspense fallback={<CanvasLoader />}>
+                  <Center>
+                    {/* <Toolbox
+                      position={[pos.x, pos.y, pos.z]}
+                      rotation={[pos.rx, pos.ry, pos.rz]}
+                      scale={pos.sc}
+                    /> */}
+                    {/* <Tool
+                    position={[0, 0, -1]}
+                    rotation={[0.66, -0.4, 0.06]}
+                    scale={3.2}
+                  /> */}
+                  </Center>
+                  <ambientLight intensity={1} />
+                  <directionalLight position={[10, 10, 10]} intensity={1} />
+                </Suspense>
+                <OrbitControls maxPolarAngle={Math.PI / 2} />
+              </Canvas>
+            </div>
             <div>
               <p className="grid-headtext">Tech Stack</p>
               <p className="grid-subtext">
@@ -54,8 +140,9 @@ const About = () => {
           <div className="grid-container">
             <div className="rounded-3xl w-full sm:h-[326px] h-fit flex justify-center items-center">
               <Globe
-                height={326}
-                width={326}
+                ref={globeRef}
+                height={340}
+                width={340}
                 backgroundColor="rgba(0,0,0,0)"
                 backgroundImageOpacity={0.5}
                 showAtmosphere
