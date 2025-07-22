@@ -1,4 +1,4 @@
-import { Suspense, useState, useEffect } from "react";
+import { Suspense, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { PerspectiveCamera } from "@react-three/drei";
 // import { Leva, useControls } from "leva";
@@ -35,21 +35,9 @@ const Hero = () => {
   const sizes = calculateSizes(isSmall, isMobile, isTablet);
 
   const [deskType, setDeskType] = useState("developer");
-  const [showNotification, setShowNotification] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setShowNotification(false), 10000);
-    return () => clearTimeout(timer);
-  }, []);
 
   return (
     <section className="min-h-screen w-full flex-col relative" id="home">
-      {/* Notification */}
-      {showNotification && (
-        <div className="fixed top-8 left-1/2 -translate-x-1/2 z-50 bg-blue-600 text-white px-6 py-3 rounded shadow-lg">
-          Welcome to Adrien's portfolio!
-        </div>
-      )}
       <div className="w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3">
         <p className="sm:text-3xl text-2xl font-medium text-white text-center font-generalsans">
           My name is Adrien

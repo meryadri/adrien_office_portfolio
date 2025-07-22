@@ -4,25 +4,27 @@ import { Canvas } from "@react-three/fiber";
 import { PerspectiveCamera, Center, OrbitControls } from "@react-three/drei";
 import CanvasLoader from "../components/CanvasLoader";
 
-import { Leva, useControls } from "leva";
+// import { Leva, useControls } from "leva";
 import Button from "../components/Button";
 import { useState, useRef, useEffect } from "react";
 import Coffee from "../components/Objects/Coffee";
 import Toolbox from "../components/Objects/Toolbox";
+import Keyboard from "../components/Objects/Keyboard";
+import Telephone from "../components/Objects/Telephone";
 
 const About = () => {
   const [hasCopied, setHasCopied] = useState(false);
   const globeRef = useRef();
 
-  const pos = useControls({
-    x: { value: 0, min: -8, max: 8 },
-    y: { value: 0, min: -10, max: 10 },
-    z: { value: 0, min: -10, max: 10 },
-    rx: { value: 0, min: -Math.PI, max: Math.PI },
-    ry: { value: 0, min: -Math.PI, max: Math.PI },
-    rz: { value: 0, min: -Math.PI, max: Math.PI },
-    sc: { value: 1, min: 0.1, max: 20 },
-  });
+  // const pos = useControls({
+  //   x: { value: 0, min: -8, max: 8 },
+  //   y: { value: 0, min: -10, max: 10 },
+  //   z: { value: 0, min: -10, max: 10 },
+  //   rx: { value: 0, min: -Math.PI, max: Math.PI },
+  //   ry: { value: 0, min: -Math.PI, max: Math.PI },
+  //   rz: { value: 0, min: -Math.PI, max: Math.PI },
+  //   sc: { value: 1, min: 0.1, max: 30 },
+  // });
 
   useEffect(() => {
     let animationFrame;
@@ -55,31 +57,24 @@ const About = () => {
               style={{ minHeight: 250, height: 250 }}
             >
               {/* <Leva /> */}
-              <Canvas
-                className="w-full h-full"
-                style={{
-                  width: "250px",
-                  height: "250px",
-                }}
-              >
+              <Canvas className="w-full h-fit sm:h-[276px] object-contain">
                 <ambientLight intensity={1} />
                 <directionalLight position={[10, 10, 10]} intensity={1} />
                 <Center>
                   <Suspense fallback={<CanvasLoader />}>
-                    <Coffee
+                    {/* <Coffee
                       position={[pos.x, pos.y, pos.z]}
                       rotation={[pos.rx, pos.ry, pos.rz]}
                       scale={pos.sc}
-                    />
-                    {/* <Coffee
-                      position={[0, 0, -1]}
-                      rotation={[0.66, -0.4, 0.06]}
-                      scale={3.2}
                     /> */}
+                    <Coffee
+                      position={[-0.2, 0, -0.2]}
+                      rotation={[0.75, -0.2, 0]}
+                      scale={25}
+                    />
                   </Suspense>
                 </Center>
-
-                <OrbitControls maxPolarAngle={Math.PI / 2} />
+                <OrbitControls maxPolarAngle={Math.PI / 2} enableZoom={false} />
               </Canvas>
             </div>
             <div>
@@ -98,31 +93,19 @@ const About = () => {
               className="flex justify-center items-center"
               style={{ minHeight: 250, height: 250 }}
             >
-              <Leva />
-              <Canvas
-                className="w-full h-full"
-                style={{
-                  width: "250px",
-                  height: "250px",
-                }}
-              >
-                <Suspense fallback={<CanvasLoader />}>
-                  <Center>
-                    {/* <Toolbox
-                      position={[pos.x, pos.y, pos.z]}
-                      rotation={[pos.rx, pos.ry, pos.rz]}
-                      scale={pos.sc}
-                    /> */}
-                    {/* <Tool
-                    position={[0, 0, -1]}
-                    rotation={[0.66, -0.4, 0.06]}
-                    scale={3.2}
-                  /> */}
-                  </Center>
-                  <ambientLight intensity={1} />
-                  <directionalLight position={[10, 10, 10]} intensity={1} />
-                </Suspense>
-                <OrbitControls maxPolarAngle={Math.PI / 2} />
+              <Canvas className="w-full h-fit sm:h-[276px] object-contain">
+                <ambientLight intensity={1} />
+                <directionalLight position={[10, 10, 10]} intensity={1} />
+                <Center>
+                  <Suspense fallback={<CanvasLoader />}>
+                    <Toolbox
+                      position={[0, 0, 0]}
+                      rotation={[0, 0, 0]}
+                      scale={10}
+                    />
+                  </Suspense>
+                </Center>
+                <OrbitControls maxPolarAngle={Math.PI / 2} enableZoom={false} />
               </Canvas>
             </div>
             <div>
@@ -188,11 +171,25 @@ const About = () => {
         </div>
         <div className="xl:col-span-2 xl:row-span-3">
           <div className="grid-container">
-            <img
-              src="/assets/grid3.png"
-              alt="grid-3"
-              className="w-full sm:h-[266px] h-fit object-contain"
-            />
+            <div
+              className="flex justify-center items-center"
+              style={{ minHeight: 250, height: 250 }}
+            >
+              <Canvas className="w-full sm:h-[266px] h-fit object-contain">
+                <ambientLight intensity={1} />
+                <directionalLight position={[10, 10, 10]} intensity={1} />
+                <Center>
+                  <Suspense fallback={<CanvasLoader />}>
+                    <Keyboard
+                      position={[3.5, 3, 0.2]}
+                      rotation={[1.5, 0, 0]}
+                      scale={37}
+                    />
+                  </Suspense>
+                </Center>
+                <OrbitControls maxPolarAngle={Math.PI / 2} enableZoom={false} />
+              </Canvas>
+            </div>
             <div>
               <p className="grid-headtext">My Journey</p>
               <p className="grid-subtext">
@@ -208,11 +205,25 @@ const About = () => {
         </div>
         <div className="xl:col-span-1 xl:row-span-2">
           <div className="grid-container">
-            <img
-              src="assets/grid4.png"
-              alt="grid-4"
-              className="w-full md:h-[126px] sm:h-[276px] h-fit object-cover sm:object-top"
-            />
+            <div
+              className="flex justify-center items-center"
+              style={{ minHeight: 180, height: 180 }}
+            >
+              <Canvas className="w-full h-fit sm:h-[276px] object-contain">
+                <ambientLight intensity={1} />
+                <directionalLight position={[10, 10, 10]} intensity={1} />
+                <Center>
+                  <Suspense fallback={<CanvasLoader />}>
+                    <Telephone
+                      position={[0, -1, -0.2]}
+                      rotation={[0.36, -1.2, 0.18]}
+                      scale={0.5}
+                    />
+                  </Suspense>
+                </Center>
+                <OrbitControls maxPolarAngle={Math.PI / 2} enableZoom={false} />
+              </Canvas>
+            </div>
             <div className="space-y-2">
               <p className="grid-subtext text-center">Contact Me </p>
               <div className="copy-container" onClick={handleCopy}>
