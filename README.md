@@ -14,7 +14,7 @@ Follow these steps to run the project locally:
 
    ```bash
    git clone https://github.com/NOBODIDI/adrien_office_portfolio.git
-   cd adrien-office
+   cd adrien-office_portfolio/3d-portfolio
    ```
 
 2. **Install dependencies:**
