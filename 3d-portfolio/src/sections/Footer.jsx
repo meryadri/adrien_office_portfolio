@@ -9,23 +9,28 @@ const Footer = () => {
         <p>Privacy Policy</p>
       </div>
       <div className="flex gap-3">
-        <div className="social-icon">
-          <img src="/assets/github.svg" alt="github" className="w-1/2 h-1/2" />
-        </div>
-        <div className="social-icon">
-          <img
-            src="/assets/twitter.svg"
-            alt="twitter"
-            className="w-1/2 h-1/2"
-          />
-        </div>
-        <div className="social-icon">
-          <img
-            src="/assets/instagram.svg"
-            alt="instagram"
-            className="w-1/2 h-1/2"
-          />
-        </div>
+        <a
+          href="https://www.linkedin.com/in/adrien-mery-92a019208/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="social-icon"
+        >
+          <img src="/assets/linkedin.svg" alt="LinkedIn" />
+        </a>
+        <a
+          href="https://github.com/NOBODIDI"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="social-icon"
+        >
+          <img src="/assets/github.svg" alt="GitHub" />
+        </a>
+        <a href="mailto:adrienmeryusa@gmail.com" className="social-icon">
+          <img src="/assets/email.svg" alt="Email" />
+        </a>
+        <a href="tel:+6473829631" className="social-icon">
+          <img src="/assets/phone.svg" alt="Phone" />
+        </a>
       </div>
       <p className="text-white-500">© 2025 Adrien Mery. All rights reserved.</p>
     </section>

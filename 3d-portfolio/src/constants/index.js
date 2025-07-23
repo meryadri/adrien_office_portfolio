@@ -299,32 +299,32 @@ export const calculateSizes = (isSmall, isMobile, isTablet) => {
 export const workExperiences = [
   {
     id: 1,
-    name: "Framer",
-    pos: "Lead Web Developer",
-    duration: "2022 - Present",
+    name: "FedEx Express",
+    pos: "Associate CE Engineer",
+    duration: "May 2023 – July 2024",
     title:
-      "Framer serves as my go-to tool for creating interactive prototypes. I use it to bring designs to  life, allowing stakeholders to experience the user flow and interactions before development.",
-    icon: "/assets/framer.svg",
+      "Developed applications to interface between business databases and systems, and created automation solutions that reduced brokering data input time by up to 40%. Collaborated with brokers to ensure alignment with their needs. Additionally, optimized the assignment of tariff classification numbers for high-value goods, reducing assignment time by 30% for the top 10 FedEx customers.",
+    icon: "/assets/fedex.svg",
     animation: "victory",
   },
   {
     id: 2,
-    name: "Figma",
-    pos: "Web Developer",
-    duration: "2020 - 2022",
+    name: "General Electric Corporate",
+    pos: "DTLP Intern",
+    duration: "June – August 2022",
     title:
-      "Figma is my collaborative design platform of choice. I utilize it to work seamlessly with team members and clients, facilitating real-time feedback and design iterations. Its cloud-based.",
-    icon: "/assets/figma.svg",
+      "Researched auditing processes within GE’s Financial Data Lake (FDL) to identify areas for improvement, leading to a 14% accuracy boost in the Java-based Hash Audit Automation program, which saved 500 minutes of manual work per day for the Data Quality (DQ) team. Also used Spark to integrate the audit program into the team’s real-time big data processing pipeline.",
+    icon: "/assets/ge.svg",
     animation: "clapping",
   },
-  {
-    id: 3,
-    name: "Notion",
-    pos: "Junior Web Developer",
-    duration: "2019 - 2020",
-    title:
-      "Notion helps me keep my projects organized. I use it for project management, task tracking, and as a central hub for documentation, ensuring that everything from design notes to.",
-    icon: "/assets/notion.svg",
-    animation: "salute",
-  },
+  // {
+  //   id: 3,
+  //   name: "Notion",
+  //   pos: "Junior Web Developer",
+  //   duration: "2019 - 2020",
+  //   title:
+  //     "Notion helps me keep my projects organized. I use it for project management, task tracking, and as a central hub for documentation, ensuring that everything from design notes to.",
+  //   icon: "/assets/notion.svg",
+  //   animation: "salute",
+  // },
 ];
