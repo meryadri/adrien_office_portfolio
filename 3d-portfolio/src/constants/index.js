@@ -66,7 +66,7 @@ export const myProjects = [
 
     href: "https://github.com/bayazitbora/ECE496-Capstone-Project",
     texture: "/textures/project/groupify_highlight.mp4",
-    logo: "/assets/groupify.png",
+    logo: "/assets/project_logos/groupify.png",
     logoStyle: {
       backgroundColor: "#2A1816",
       border: "0.2px solid #36201D",
@@ -76,35 +76,35 @@ export const myProjects = [
     tags: [
       {
         id: 1,
-        name: "React.js",
-        path: "/assets/react.svg",
+        name: "Django",
+        path: "/assets/tools/django.png",
       },
       {
         id: 2,
-        name: "TailwindCSS",
-        path: "assets/tailwindcss.png",
+        name: "React",
+        path: "assets/tools/react.svg",
       },
       {
         id: 3,
-        name: "TypeScript",
-        path: "/assets/typescript.png",
+        name: "Docker",
+        path: "/assets/tools/docker.png",
       },
       {
         id: 4,
-        name: "Framer Motion",
-        path: "/assets/framer.png",
+        name: "PostgreSQL",
+        path: "/assets/tools/postgreSQL.png",
       },
     ],
   },
   {
-    title: "U. of Toronto Marketplace Hub",
+    title: "U. of Toronto Mkt - Student Marketplace",
     desc: "Marketplace Hub is a student-built web platform that enables University of Toronto students to buy and sell items locally on campus. Designed to reduce waste and foster community, it offers a simple and secure way to exchange goods.",
     subdesc:
       "Developed by a team of 7 using Flask, React, and PostgreSQL, Marketplace Hub features CI/CD integration with Docker, Selenium, and pytest for robust testing. The platform attracted 50+ users in its first release, driving sustainable campus commerce.",
 
     href: "https://github.com/NOBODIDI/project-1-web-application-design-group18-hashmappers",
-    texture: "/textures/project/project2.mp4",
-    logo: "/assets/project-logo2.png",
+    texture: "/textures/project/UofT_Marketplace_highlight.mp4",
+    logo: "/assets/project_logos/UofT_Mkt.png",
     logoStyle: {
       backgroundColor: "#13202F",
       border: "0.2px solid #17293E",
@@ -114,23 +114,23 @@ export const myProjects = [
     tags: [
       {
         id: 1,
-        name: "React.js",
-        path: "/assets/react.svg",
+        name: "Flask",
+        path: "/assets/tools/flask.png",
       },
       {
         id: 2,
-        name: "TailwindCSS",
-        path: "assets/tailwindcss.png",
+        name: "React",
+        path: "assets/tools/react.svg",
       },
       {
         id: 3,
-        name: "TypeScript",
-        path: "/assets/typescript.png",
+        name: "Vercel",
+        path: "/assets/tools/vercel.png",
       },
       {
         id: 4,
-        name: "Framer Motion",
-        path: "/assets/framer.png",
+        name: "Docker",
+        path: "/assets/tools/docker.png",
       },
     ],
   },
@@ -141,8 +141,8 @@ export const myProjects = [
       "Led a team of 4 to develop and tune a ResNet-50 CNN trained on 32,000 images across an adaptively partitioned map. By fine-tuning hyperparameters and balancing feature extraction with end-to-end training, we achieved superior performance and presented our results in a comprehensive report, demo, and presentation.",
 
     href: "https://github.com/NOBODIDI/APS360_GeoGuessr_NN",
-    texture: "/textures/project/project3.mp4",
-    logo: "/assets/project-logo3.png",
+    texture: "/textures/project/geoguessr_AI_highlight.mp4",
+    logo: "/assets/project_logos/geoguessr_AI.png",
     logoStyle: {
       backgroundColor: "#60f5a1",
       background:
@@ -154,23 +154,23 @@ export const myProjects = [
     tags: [
       {
         id: 1,
-        name: "React.js",
-        path: "/assets/react.svg",
+        name: "PyTorch",
+        path: "/assets/tools/pytorch.png",
       },
       {
         id: 2,
-        name: "TailwindCSS",
-        path: "assets/tailwindcss.png",
+        name: "Numpy",
+        path: "assets/tools/numpy.png",
       },
       {
         id: 3,
-        name: "TypeScript",
-        path: "/assets/typescript.png",
+        name: "Matplotlib",
+        path: "/assets/tools/matplotlib.png",
       },
       {
         id: 4,
-        name: "Framer Motion",
-        path: "/assets/framer.png",
+        name: "Google Maps API",
+        path: "/assets/tools/googleMaps.png",
       },
     ],
   },
@@ -181,14 +181,51 @@ export const myProjects = [
       "Built in 36 hours during a hackathon using React and Firebase, YouLingo won 'Best U of T Hack' for its innovation. It extracts transcripts via the YouTube API, analyzes content using Cathoven to assess language difficulty, and leverages ChatGPT to generate tailored questions and evaluate user understanding—enhancing future lesson recommendations.",
 
     href: "https://github.com/NOBODIDI/YouLingo",
-    texture: "/textures/project/project4.mp4",
-    logo: "/assets/project-logo4.png",
+    texture: "/textures/project/youlingo_highlight.mp4",
+    logo: "/assets/project_logos/youlingo.png",
     logoStyle: {
       backgroundColor: "#0E1F38",
       border: "0.2px solid #0E2D58",
       boxShadow: "0px 0px 60px 0px #2F67B64D",
     },
     spotlight: "/assets/spotlight4.png",
+    tags: [
+      {
+        id: 1,
+        name: "Flask",
+        path: "/assets/tools/flask.png",
+      },
+      {
+        id: 2,
+        name: "Firebase",
+        path: "assets/tools/firebase.png",
+      },
+      {
+        id: 3,
+        name: "Figma",
+        path: "/assets/tools/figma.png",
+      },
+      {
+        id: 4,
+        name: "Chat GPT",
+        path: "/assets/tools/chatgpt.png",
+      },
+    ],
+  },
+  {
+    title: "Adrien's 3D Portfolio - This Website!",
+    desc: "Imaginify is a groundbreaking Software-as-a-Service application that empowers users to create stunning photo manipulations using AI technology. With features like AI-driven image editing, a payments system, and a credits-based model.",
+    subdesc:
+      "Built with Next.js 14, Cloudinary AI, Clerk, and Stripe, Imaginify combines cutting-edge technology with a user-centric approach. It can be turned into a side income or even a full-fledged business.",
+    href: "https://www.youtube.com/watch?v=Ahwoks_dawU",
+    texture: "/textures/project/project5.mp4",
+    logo: "/assets/project-logo5.png",
+    logoStyle: {
+      backgroundColor: "#1C1A43",
+      border: "0.2px solid #252262",
+      boxShadow: "0px 0px 60px 0px #635BFF4D",
+    },
+    spotlight: "/assets/spotlight5.png",
     tags: [
       {
         id: 1,
@@ -212,43 +249,6 @@ export const myProjects = [
       },
     ],
   },
-  // {
-  //   title: "Imaginify - AI Photo Manipulation App",
-  //   desc: "Imaginify is a groundbreaking Software-as-a-Service application that empowers users to create stunning photo manipulations using AI technology. With features like AI-driven image editing, a payments system, and a credits-based model.",
-  //   subdesc:
-  //     "Built with Next.js 14, Cloudinary AI, Clerk, and Stripe, Imaginify combines cutting-edge technology with a user-centric approach. It can be turned into a side income or even a full-fledged business.",
-  //   href: "https://www.youtube.com/watch?v=Ahwoks_dawU",
-  //   texture: "/textures/project/project5.mp4",
-  //   logo: "/assets/project-logo5.png",
-  //   logoStyle: {
-  //     backgroundColor: "#1C1A43",
-  //     border: "0.2px solid #252262",
-  //     boxShadow: "0px 0px 60px 0px #635BFF4D",
-  //   },
-  //   spotlight: "/assets/spotlight5.png",
-  //   tags: [
-  //     {
-  //       id: 1,
-  //       name: "React.js",
-  //       path: "/assets/react.svg",
-  //     },
-  //     {
-  //       id: 2,
-  //       name: "TailwindCSS",
-  //       path: "assets/tailwindcss.png",
-  //     },
-  //     {
-  //       id: 3,
-  //       name: "TypeScript",
-  //       path: "/assets/typescript.png",
-  //     },
-  //     {
-  //       id: 4,
-  //       name: "Framer Motion",
-  //       path: "/assets/framer.png",
-  //     },
-  //   ],
-  // },
 ];
 
 export const calculateSizes = (isSmall, isMobile, isTablet) => {

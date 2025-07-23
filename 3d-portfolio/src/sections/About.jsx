@@ -94,7 +94,7 @@ const About = () => {
               style={{ minHeight: 250, height: 250 }}
             >
               <Canvas className="w-full h-fit sm:h-[276px] object-contain">
-                <ambientLight intensity={1} />
+                <ambientLight intensity={5} />
                 <directionalLight position={[10, 10, 10]} intensity={1} />
                 <Center>
                   <Suspense fallback={<CanvasLoader />}>
@@ -176,7 +176,7 @@ const About = () => {
               style={{ minHeight: 250, height: 250 }}
             >
               <Canvas className="w-full sm:h-[266px] h-fit object-contain">
-                <ambientLight intensity={1} />
+                <ambientLight intensity={4} />
                 <directionalLight position={[10, 10, 10]} intensity={1} />
                 <Center>
                   <Suspense fallback={<CanvasLoader />}>
