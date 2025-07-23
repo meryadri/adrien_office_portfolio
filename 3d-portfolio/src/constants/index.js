@@ -214,12 +214,13 @@ export const myProjects = [
   },
   {
     title: "Adrien's 3D Portfolio - This Website!",
-    desc: "Imaginify is a groundbreaking Software-as-a-Service application that empowers users to create stunning photo manipulations using AI technology. With features like AI-driven image editing, a payments system, and a credits-based model.",
+    desc: "My Portfolio is an interactive web experience that showcases my projects, technical skills, and work experience through immersive 3D animations. It offers a playful and engaging way for visitors to explore my background and development work.",
     subdesc:
-      "Built with Next.js 14, Cloudinary AI, Clerk, and Stripe, Imaginify combines cutting-edge technology with a user-centric approach. It can be turned into a side income or even a full-fledged business.",
-    href: "https://www.youtube.com/watch?v=Ahwoks_dawU",
-    texture: "/textures/project/project5.mp4",
-    logo: "/assets/project-logo5.png",
+      "Built with React, TailwindCSS, and React Three Fiber, this site merges design and interactivity to highlight both frontend and 3D programming skills.",
+
+    href: "https://github.com/NOBODIDI/adrien_office_portfolio",
+    texture: "/textures/project/portfolio_highlight.mp4",
+    logo: "/assets/project_logos/adrien.png",
     logoStyle: {
       backgroundColor: "#1C1A43",
       border: "0.2px solid #252262",
@@ -229,23 +230,23 @@ export const myProjects = [
     tags: [
       {
         id: 1,
-        name: "React.js",
-        path: "/assets/react.svg",
+        name: "Three.js",
+        path: "/assets/tools/threejs.png",
       },
       {
         id: 2,
         name: "TailwindCSS",
-        path: "assets/tailwindcss.png",
+        path: "assets/tools/tailwindcss.png",
       },
       {
         id: 3,
-        name: "TypeScript",
-        path: "/assets/typescript.png",
+        name: "React",
+        path: "/assets/tools/react.svg",
       },
       {
         id: 4,
-        name: "Framer Motion",
-        path: "/assets/framer.png",
+        name: "Hostinger",
+        path: "/assets/tools/hostinger.png",
       },
     ],
   },
