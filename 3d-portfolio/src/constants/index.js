@@ -59,13 +59,14 @@ export const clientReviews = [
 
 export const myProjects = [
   {
-    title: "Podcastr - AI Podcast Platform",
-    desc: "Podcastr is a revolutionary Software-as-a-Service platform that transforms the way podcasts are created. With advanced AI-powered features like text-to-multiple-voices functionality, it allows creators to generate diverse voiceovers from a single text input.",
+    title: "Groupify - Student Team Formation Platform ",
+    desc: "Groupify is an intelligent web application that helps university instructors form highly compatible student teams. By leveraging algorithms like K-means, greedy matching, and Gaussian Mixture Models, it automates team formation while balancing technical and human factors.",
     subdesc:
-      "Built as a unique Software-as-a-Service app with Next.js 14, Tailwind CSS, TypeScript, Framer Motion and Convex, Podcastr is designed for optimal performance and scalability.",
-    href: "https://www.youtube.com/watch?v=zfAb95tJvZQ",
-    texture: "/textures/project/project1.mp4",
-    logo: "/assets/project-logo1.png",
+      "Developed as part of our U of T Engineering capstone using React, Figma, Django, PostgreSQL, and REST APIs, Groupify integrates data-driven algorithms with user-centered design to streamline the student team creation process.",
+
+    href: "https://github.com/bayazitbora/ECE496-Capstone-Project",
+    texture: "/textures/project/groupify_highlight.mp4",
+    logo: "/assets/groupify.png",
     logoStyle: {
       backgroundColor: "#2A1816",
       border: "0.2px solid #36201D",
@@ -96,11 +97,12 @@ export const myProjects = [
     ],
   },
   {
-    title: "LiveDoc - Real-Time Google Docs Clone",
-    desc: "LiveDoc is a powerful collaborative app that elevates the capabilities of real-time document editing. As an enhanced version of Google Docs, It supports millions of collaborators simultaneously, ensuring that every change is captured instantly and accurately.",
+    title: "U. of Toronto Marketplace Hub",
+    desc: "Marketplace Hub is a student-built web platform that enables University of Toronto students to buy and sell items locally on campus. Designed to reduce waste and foster community, it offers a simple and secure way to exchange goods.",
     subdesc:
-      "With LiveDoc, users can experience the future of collaboration, where multiple contributors work together in real time without any lag, by using Next.js and Liveblocks newest features.",
-    href: "https://www.youtube.com/watch?v=y5vE8y_f_OM",
+      "Developed by a team of 7 using Flask, React, and PostgreSQL, Marketplace Hub features CI/CD integration with Docker, Selenium, and pytest for robust testing. The platform attracted 50+ users in its first release, driving sustainable campus commerce.",
+
+    href: "https://github.com/NOBODIDI/project-1-web-application-design-group18-hashmappers",
     texture: "/textures/project/project2.mp4",
     logo: "/assets/project-logo2.png",
     logoStyle: {
@@ -133,11 +135,12 @@ export const myProjects = [
     ],
   },
   {
-    title: "CarePulse - Health Management System",
-    desc: "An innovative healthcare platform designed to streamline essential medical processes. It simplifies patient registration, appointment scheduling, and medical record management, providing a seamless experience for both healthcare providers and patients.",
+    title: "GeoGuessr AI - Geolocation with CNN",
+    desc: "GeoGuessr AI is a deep learning system that predicts image geolocations by analyzing visual cues from Google Street View. It outperforms human-level accuracy through advanced convolutional neural network techniques.",
     subdesc:
-      "With a focus on efficiency, CarePulse integrantes complex forms and SMS notifications, by using Next.js, Appwrite, Twillio and Sentry that enhance operational workflows.",
-    href: "https://www.youtube.com/watch?v=lEflo_sc82g",
+      "Led a team of 4 to develop and tune a ResNet-50 CNN trained on 32,000 images across an adaptively partitioned map. By fine-tuning hyperparameters and balancing feature extraction with end-to-end training, we achieved superior performance and presented our results in a comprehensive report, demo, and presentation.",
+
+    href: "https://github.com/NOBODIDI/APS360_GeoGuessr_NN",
     texture: "/textures/project/project3.mp4",
     logo: "/assets/project-logo3.png",
     logoStyle: {
@@ -172,11 +175,12 @@ export const myProjects = [
     ],
   },
   {
-    title: "Horizon - Online Banking Platform",
-    desc: "Horizon is a comprehensive online banking platform that offers users a centralized finance management dashboard. It allows users to connect multiple bank accounts, monitor real-time transactions, and seamlessly transfer money to other users.",
+    title: "YouLingo - Language Learning With Media",
+    desc: "YouLingo is an award-winning web application that transforms YouTube videos into interactive language lessons, making language learning engaging, personalized, and accessible through everyday media.",
     subdesc:
-      "Built with Next.js 14 Appwrite, Dwolla and Plaid, Horizon ensures a smooth and secure banking experience, tailored to meet the needs of modern consumers.",
-    href: "https://www.youtube.com/watch?v=PuOVqP_cjkE",
+      "Built in 36 hours during a hackathon using React and Firebase, YouLingo won 'Best U of T Hack' for its innovation. It extracts transcripts via the YouTube API, analyzes content using Cathoven to assess language difficulty, and leverages ChatGPT to generate tailored questions and evaluate user understanding—enhancing future lesson recommendations.",
+
+    href: "https://github.com/NOBODIDI/YouLingo",
     texture: "/textures/project/project4.mp4",
     logo: "/assets/project-logo4.png",
     logoStyle: {
@@ -208,43 +212,43 @@ export const myProjects = [
       },
     ],
   },
-  {
-    title: "Imaginify - AI Photo Manipulation App",
-    desc: "Imaginify is a groundbreaking Software-as-a-Service application that empowers users to create stunning photo manipulations using AI technology. With features like AI-driven image editing, a payments system, and a credits-based model.",
-    subdesc:
-      "Built with Next.js 14, Cloudinary AI, Clerk, and Stripe, Imaginify combines cutting-edge technology with a user-centric approach. It can be turned into a side income or even a full-fledged business.",
-    href: "https://www.youtube.com/watch?v=Ahwoks_dawU",
-    texture: "/textures/project/project5.mp4",
-    logo: "/assets/project-logo5.png",
-    logoStyle: {
-      backgroundColor: "#1C1A43",
-      border: "0.2px solid #252262",
-      boxShadow: "0px 0px 60px 0px #635BFF4D",
-    },
-    spotlight: "/assets/spotlight5.png",
-    tags: [
-      {
-        id: 1,
-        name: "React.js",
-        path: "/assets/react.svg",
-      },
-      {
-        id: 2,
-        name: "TailwindCSS",
-        path: "assets/tailwindcss.png",
-      },
-      {
-        id: 3,
-        name: "TypeScript",
-        path: "/assets/typescript.png",
-      },
-      {
-        id: 4,
-        name: "Framer Motion",
-        path: "/assets/framer.png",
-      },
-    ],
-  },
+  // {
+  //   title: "Imaginify - AI Photo Manipulation App",
+  //   desc: "Imaginify is a groundbreaking Software-as-a-Service application that empowers users to create stunning photo manipulations using AI technology. With features like AI-driven image editing, a payments system, and a credits-based model.",
+  //   subdesc:
+  //     "Built with Next.js 14, Cloudinary AI, Clerk, and Stripe, Imaginify combines cutting-edge technology with a user-centric approach. It can be turned into a side income or even a full-fledged business.",
+  //   href: "https://www.youtube.com/watch?v=Ahwoks_dawU",
+  //   texture: "/textures/project/project5.mp4",
+  //   logo: "/assets/project-logo5.png",
+  //   logoStyle: {
+  //     backgroundColor: "#1C1A43",
+  //     border: "0.2px solid #252262",
+  //     boxShadow: "0px 0px 60px 0px #635BFF4D",
+  //   },
+  //   spotlight: "/assets/spotlight5.png",
+  //   tags: [
+  //     {
+  //       id: 1,
+  //       name: "React.js",
+  //       path: "/assets/react.svg",
+  //     },
+  //     {
+  //       id: 2,
+  //       name: "TailwindCSS",
+  //       path: "assets/tailwindcss.png",
+  //     },
+  //     {
+  //       id: 3,
+  //       name: "TypeScript",
+  //       path: "/assets/typescript.png",
+  //     },
+  //     {
+  //       id: 4,
+  //       name: "Framer Motion",
+  //       path: "/assets/framer.png",
+  //     },
+  //   ],
+  // },
 ];
 
 export const calculateSizes = (isSmall, isMobile, isTablet) => {
