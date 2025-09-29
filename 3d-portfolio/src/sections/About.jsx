@@ -3,6 +3,7 @@ import Globe from "react-globe.gl";
 import { Canvas } from "@react-three/fiber";
 import { PerspectiveCamera, Center, OrbitControls } from "@react-three/drei";
 import CanvasLoader from "../components/CanvasLoader";
+import { aboutContent } from "../constants";
 
 // import { Leva, useControls } from "leva";
 import Button from "../components/Button";
@@ -40,12 +41,26 @@ const About = () => {
   }, []);
 
   const handleCopy = () => {
-    navigator.clipboard.writeText("adrien.mery@mail.utoronto.ca");
+    navigator.clipboard.writeText(aboutContent.contactEmail);
     setHasCopied(true);
     setTimeout(() => {
       setHasCopied(false);
     }, 2000);
   };
+
+  const {
+    introTitle,
+    introBody,
+    techStackTitle,
+    techStackBody,
+    globeLabels,
+    locationTitle,
+    locationBody,
+    journeyTitle,
+    journeyBody,
+    contactCta,
+    contactEmail,
+  } = aboutContent;
 
   return (
     <section className="c-space my-20" id="about">
@@ -78,12 +93,8 @@ const About = () => {
               </Canvas>
             </div>
             <div>
-              <p className="grid-headtext"> Hi, I'm Adrien</p>
-              <p className="grid-subtext">
-                I have honed my skills in frontend and backend development over
-                the past 4 years. I am focused on offering efficient and elegant
-                solutions.
-              </p>
+              <p className="grid-headtext">{introTitle}</p>
+              <p className="grid-subtext">{introBody}</p>
             </div>
           </div>
         </div>
@@ -109,13 +120,8 @@ const About = () => {
               </Canvas>
             </div>
             <div>
-              <p className="grid-headtext">Tech Stack</p>
-              <p className="grid-subtext">
-                I specialize in Python and JavaScript, with a focus on web
-                application development. My expertise includes frameworks like
-                Django, Flask, and React, as well as database management with
-                PostgreSQL.
-              </p>
+              <p className="grid-headtext">{techStackTitle}</p>
+              <p className="grid-subtext">{techStackBody}</p>
             </div>
           </div>
         </div>
@@ -132,40 +138,13 @@ const About = () => {
                 showGraticules
                 globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
                 bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
-                labelsData={[
-                  {
-                    lat: 42.354464846381504,
-                    lng: -71.06340828631143,
-                    text: "I live here!",
-                    color: "white",
-                    size: 20,
-                  },
-                  {
-                    lat: 43.65617520443065,
-                    lng: -79.35333881244698,
-                    text: "I study here!",
-                    color: "white",
-                    size: 20,
-                  },
-                  {
-                    lat: 48.85365944547363,
-                    lng: 2.3614536552392655,
-                    text: "I come from here!",
-                    color: "white",
-                    size: 20,
-                  },
-                ]}
+                labelsData={globeLabels}
               />
             </div>
             <div>
-              <p className="grid-headtext">
-                I work remotely across most timezones
-              </p>
-              <p className="grid-subtext">
-                I am based in the United States & Canada, with remote work
-                available.
-              </p>
-              <Button name="Contact Me" isBeam containerClass="w-full mt-10" />
+              <p className="grid-headtext">{locationTitle}</p>
+              <p className="grid-subtext">{locationBody}</p>
+              <Button name={contactCta} isBeam containerClass="w-full mt-10" />
             </div>
           </div>
         </div>
@@ -191,15 +170,8 @@ const About = () => {
               </Canvas>
             </div>
             <div>
-              <p className="grid-headtext">My Journey</p>
-              <p className="grid-subtext">
-                I started my path to software engineering at the University of
-                Toronto. I completed two summer internships at General Electric,
-                a year-long co-op as a software engineer at FedEx, and delivered
-                five applications deployed for the University of Toronto
-                community and beyond. I also contributed to open-source
-                projects, notably the Pandas library.
-              </p>
+              <p className="grid-headtext">{journeyTitle}</p>
+              <p className="grid-subtext">{journeyBody}</p>
             </div>
           </div>
         </div>
@@ -225,14 +197,14 @@ const About = () => {
               </Canvas>
             </div>
             <div className="space-y-2">
-              <p className="grid-subtext text-center">Contact Me </p>
+              <p className="grid-subtext text-center">{contactCta}</p>
               <div className="copy-container" onClick={handleCopy}>
                 <img
                   src={hasCopied ? "assets/tick.svg" : "assets/copy.svg"}
                   alt="copy"
                 />
                 <p className="lg:text-2xl md:text-xl font-medium text-gray_gradient text-white">
-                  adrien.mery@mail.utoronto.ca
+                  {contactEmail}
                 </p>
               </div>
             </div>

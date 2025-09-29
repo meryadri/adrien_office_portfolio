@@ -18,7 +18,7 @@ const Footer = () => {
           <img src="/assets/linkedin.svg" alt="LinkedIn" />
         </a>
         <a
-          href="https://github.com/NOBODIDI"
+          href="https://github.com/meryadri"
           target="_blank"
           rel="noopener noreferrer"
           className="social-icon"

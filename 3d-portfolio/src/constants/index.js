@@ -22,6 +22,60 @@ export const navLinks = [
   },
 ];
 
+export const heroContent = {
+  greeting: "My name is Adrien",
+  taglinePrefix: "I am",
+  deskCycleMs: 7000,
+  fadeDurationMs: 150,
+  ctaLabel: "Let's work together",
+  deskTypes: [
+    { key: "developer", label: "an ML engineer" },
+    { key: "tinkerer", label: "a creative ML builder" },
+    { key: "learner", label: "a curious researcher" },
+    { key: "traveller", label: "a global problem solver" },
+  ],
+};
+
+export const aboutContent = {
+  introTitle: "Hi, I'm Adrien",
+  introBody:
+    "I craft creative machine learning experiences, production-ready ML engineering pipelines, and the full-stack software that turns research ideas into products people rely on.",
+  techStackTitle: "Tech Stack",
+  techStackBody:
+    "My toolkit spans Python, JavaScript, SQL, and C/C++, alongside PyTorch, TensorFlow, Spark, Flask, Django, React, and modern data tooling to deploy intelligent systems end-to-end.",
+  globeLabels: [
+    {
+      lat: 42.354464846381504,
+      lng: -71.06340828631143,
+      text: "I live here!",
+      color: "white",
+      size: 20,
+    },
+    {
+      lat: 43.65617520443065,
+      lng: -79.35333881244698,
+      text: "I study here!",
+      color: "white",
+      size: 20,
+    },
+    {
+      lat: 48.85365944547363,
+      lng: 2.3614536552392655,
+      text: "I come from here!",
+      color: "white",
+      size: 20,
+    },
+  ],
+  locationTitle: "I collaborate across North America",
+  locationBody:
+    "I split my time between Boston and Toronto and am available to work throughout the United States and Canada.",
+  journeyTitle: "My Journey",
+  journeyBody:
+    "I completed my BASc in Computer Engineering at the University of Toronto and recently began an MS in AI at Northeastern. At FedEx Express, I shipped automation and ML classification pipelines that accelerated brokerage workflows for top customers, and at GE I boosted audit accuracy while integrating real-time Spark data flows. I keep building award-winning AI products—from adaptive language-learning experiences to team-matching platforms—driving everything from research to production.",
+  contactCta: "Contact Me",
+  contactEmail: "adrienmeryusa@gmail.com",
+};
+
 export const clientReviews = [
   {
     id: 1,
@@ -64,7 +118,7 @@ export const myProjects = [
     subdesc:
       "Developed as part of our U of T Engineering capstone using React, Figma, Django, PostgreSQL, and REST APIs, Groupify integrates data-driven algorithms with user-centered design to streamline the student team creation process.",
 
-    href: "https://github.com/bayazitbora/ECE496-Capstone-Project",
+    href: "https://github.com/meryadri",
     texture: "/textures/project/groupify_highlight.mp4",
     logo: "/assets/project_logos/groupify.png",
     logoStyle: {
@@ -102,7 +156,7 @@ export const myProjects = [
     subdesc:
       "Developed by a team of 7 using Flask, React, and PostgreSQL, Marketplace Hub features CI/CD integration with Docker, Selenium, and pytest for robust testing. The platform attracted 50+ users in its first release, driving sustainable campus commerce.",
 
-    href: "https://github.com/NOBODIDI/project-1-web-application-design-group18-hashmappers",
+    href: "https://github.com/meryadri",
     texture: "/textures/project/UofT_Marketplace_highlight.mp4",
     logo: "/assets/project_logos/UofT_Mkt.png",
     logoStyle: {
@@ -140,7 +194,7 @@ export const myProjects = [
     subdesc:
       "Led a team of 4 to develop and tune a ResNet-50 CNN trained on 32,000 images across an adaptively partitioned map. By fine-tuning hyperparameters and balancing feature extraction with end-to-end training, we achieved superior performance and presented our results in a comprehensive report, demo, and presentation.",
 
-    href: "https://github.com/NOBODIDI/APS360_GeoGuessr_NN",
+    href: "https://github.com/meryadri/APS360_GeoGuessr_NN",
     texture: "/textures/project/geoguessr_AI_highlight.mp4",
     logo: "/assets/project_logos/geoguessr_AI.png",
     logoStyle: {
@@ -180,7 +234,7 @@ export const myProjects = [
     subdesc:
       "Built in 36 hours during a hackathon using React and Firebase, YouLingo won 'Best U of T Hack' for its innovation. It extracts transcripts via the YouTube API, analyzes content using Cathoven to assess language difficulty, and leverages ChatGPT to generate tailored questions and evaluate user understanding—enhancing future lesson recommendations.",
 
-    href: "https://github.com/NOBODIDI/YouLingo",
+    href: "https://github.com/meryadri",
     texture: "/textures/project/youlingo_highlight.mp4",
     logo: "/assets/project_logos/youlingo.png",
     logoStyle: {
@@ -218,7 +272,7 @@ export const myProjects = [
     subdesc:
       "Built with React, TailwindCSS, and React Three Fiber, this site merges design and interactivity to highlight both frontend and 3D programming skills.",
 
-    href: "https://github.com/NOBODIDI/adrien_office_portfolio",
+    href: "https://github.com/meryadri/adrien_office_portfolio",
     texture: "/textures/project/portfolio_highlight.mp4",
     logo: "/assets/project_logos/adrien.png",
     logoStyle: {

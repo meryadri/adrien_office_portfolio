@@ -1,10 +1,10 @@
-import { Suspense, useState } from "react";
+import { Suspense, useState, useEffect, useRef, useCallback } from "react";
 import { Canvas } from "@react-three/fiber";
 import { PerspectiveCamera } from "@react-three/drei";
 // import { Leva, useControls } from "leva";
 import { useMediaQuery } from "react-responsive";
 
-import { calculateSizes } from "../constants";
+import { calculateSizes, heroContent } from "../constants";
 import HackerRoom from "../components/Rooms/HackerRoom";
 import ExplorerRoom from "../components/Rooms/ExplorerRoom";
 import ReaderRoom from "../components/Rooms/ReaderRoom";
@@ -19,7 +19,12 @@ import Cube from "../components/Cube";
 import Rings from "../components/Rings";
 import Bicycle from "../components/Bicycle";
 import Button from "../components/Button";
-import DeskTypeDropdown from "../components/DeskTypeDropdown";
+
+const deskTypes = heroContent.deskTypes.map((desk) => desk.key);
+const deskTypeLabels = heroContent.deskTypes.reduce((acc, desk) => {
+  acc[desk.key] = desk.label;
+  return acc;
+}, {});
 
 const Hero = () => {
   // const pos = useControls({
@@ -34,23 +39,60 @@ const Hero = () => {
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
   const sizes = calculateSizes(isSmall, isMobile, isTablet);
 
-  const [deskType, setDeskType] = useState("developer");
+  const [deskType, setDeskType] = useState(deskTypes[0]);
+  const [isFading, setIsFading] = useState(false);
+  const fadeTimeoutRef = useRef(null);
+  const revealTimeoutRef = useRef(null);
+  const fadeDuration = heroContent.fadeDurationMs;
+
+  const advanceDesk = useCallback(() => {
+    if (fadeTimeoutRef.current) clearTimeout(fadeTimeoutRef.current);
+    if (revealTimeoutRef.current) clearTimeout(revealTimeoutRef.current);
+    setIsFading(true);
+    fadeTimeoutRef.current = setTimeout(() => {
+      setDeskType((prev) => {
+        const currentIndex = deskTypes.indexOf(prev);
+        const nextIndex = (currentIndex + 1) % deskTypes.length;
+        return deskTypes[nextIndex];
+      });
+      revealTimeoutRef.current = setTimeout(() => {
+        setIsFading(false);
+      }, fadeDuration);
+    }, fadeDuration);
+  }, [fadeDuration]);
+
+  useEffect(() => {
+    const interval = setInterval(advanceDesk, heroContent.deskCycleMs);
+
+    return () => {
+      clearInterval(interval);
+      if (fadeTimeoutRef.current) clearTimeout(fadeTimeoutRef.current);
+      if (revealTimeoutRef.current) clearTimeout(revealTimeoutRef.current);
+    };
+  }, [advanceDesk]);
+
+  const deskTypeLabel = deskTypeLabels[deskType];
 
   return (
     <section className="min-h-screen w-full flex-col relative" id="home">
       <div className="w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3">
         <p className="sm:text-3xl text-2xl font-medium text-white text-center font-generalsans">
-          My name is Adrien
+          {heroContent.greeting}
           <span className="waving-hand">👋</span>
         </p>
-        <div className="absolute top-8 right-0 left-0 w-full z-10 c-space flex flex-row flex-nowrap justify-center gap-4">
+        <div className="absolute top-8 right-0 left-0 w-full z-10 c-space flex flex-row flex-nowrap justify-center gap-2">
           <p className="hero_tag text-gray_gradient whitespace-nowrap">
-            I am a{" "}
+            {heroContent.taglinePrefix} {deskTypeLabel}
           </p>
-          <DeskTypeDropdown deskType={deskType} setDeskType={setDeskType} />
         </div>
       </div>
       <div className="w-full h-full absolute inset-0">
+        <div
+          className={`pointer-events-none absolute inset-0 z-10 bg-[#050816] transition-opacity ${
+            isFading ? "opacity-80" : "opacity-0"
+          }`}
+          style={{ transitionDuration: `${fadeDuration}ms` }}
+        />
         {/* <Leva /> */}
         <Canvas className="w-full h-full">
           <Suspense fallback={<CanvasLoader />}>
@@ -132,7 +174,7 @@ const Hero = () => {
       <div className="absolute bottom-7 right-0 left-0 w-full z-10 c-space">
         <a href="#about" className="w-fit">
           <Button
-            name="Let's work together"
+            name={heroContent.ctaLabel}
             isBeam
             containerClass="sm:w-fit w-full sm:min-w-96"
           />
