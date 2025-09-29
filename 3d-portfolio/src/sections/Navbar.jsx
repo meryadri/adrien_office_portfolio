@@ -28,8 +28,13 @@ const Navbar = () => {
         <div className="flex justify-between items-center py-5 mx-auto c-space">
           <a
             href="/"
-            className="text-neutral-400 font-bold text-xl hover:text-white transition-colors"
+            className="flex items-center gap-3 text-neutral-400 font-bold text-xl hover:text-white transition-colors"
           >
+            <img
+              src="assets/adrien.jpg"
+              alt="Adrien Mery"
+              className="w-10 h-10 rounded-full object-cover border border-neutral-700"
+            />
             Adrien Mery
           </a>
           <button

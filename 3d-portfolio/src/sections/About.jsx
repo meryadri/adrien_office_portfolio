@@ -60,6 +60,7 @@ const About = () => {
     journeyBody,
     contactCta,
     contactEmail,
+    contactLinks,
   } = aboutContent;
 
   return (
@@ -206,6 +207,20 @@ const About = () => {
                 <p className="lg:text-2xl md:text-xl font-medium text-gray_gradient text-white">
                   {contactEmail}
                 </p>
+              </div>
+              <div className="flex justify-center gap-4 pt-2">
+                {contactLinks.map(({ href, icon, label }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    className="social-icon"
+                    target={href.startsWith("http") ? "_blank" : undefined}
+                    rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+                    aria-label={label}
+                  >
+                    <img src={icon} alt={label} />
+                  </a>
+                ))}
               </div>
             </div>
           </div>

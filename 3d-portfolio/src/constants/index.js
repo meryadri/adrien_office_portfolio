@@ -25,7 +25,7 @@ export const navLinks = [
 export const heroContent = {
   greeting: "My name is Adrien",
   taglinePrefix: "I am",
-  deskCycleMs: 7000,
+  deskCycleMs: 12000,
   fadeDurationMs: 150,
   ctaLabel: "Let's work together",
   deskTypes: [
@@ -74,6 +74,29 @@ export const aboutContent = {
     "I completed my BASc in Computer Engineering at the University of Toronto and recently began an MS in AI at Northeastern. At FedEx Express, I shipped automation and ML classification pipelines that accelerated brokerage workflows for top customers, and at GE I boosted audit accuracy while integrating real-time Spark data flows. I keep building award-winning AI products—from adaptive language-learning experiences to team-matching platforms—driving everything from research to production.",
   contactCta: "Contact Me",
   contactEmail: "adrienmeryusa@gmail.com",
+  contactPhone: "+16473829631",
+  contactLinks: [
+    {
+      href: "https://www.linkedin.com/in/adrien-mery-92a019208/",
+      icon: "/assets/linkedin.svg",
+      label: "LinkedIn",
+    },
+    {
+      href: "https://github.com/meryadri",
+      icon: "/assets/github.svg",
+      label: "GitHub",
+    },
+    {
+      href: "mailto:adrienmeryusa@gmail.com",
+      icon: "/assets/email.svg",
+      label: "Email",
+    },
+    {
+      href: "tel:+16473829631",
+      icon: "/assets/phone.svg",
+      label: "Phone",
+    },
+  ],
 };
 
 export const clientReviews = [
