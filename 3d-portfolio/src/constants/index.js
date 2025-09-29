@@ -17,6 +17,11 @@ export const navLinks = [
   },
   {
     id: 5,
+    name: "Education",
+    href: "#education",
+  },
+  {
+    id: 6,
     name: "Contact",
     href: "#contact",
   },
@@ -32,7 +37,7 @@ export const heroContent = {
     { key: "developer", label: "an ML engineer" },
     { key: "tinkerer", label: "a creative ML builder" },
     { key: "learner", label: "a curious researcher" },
-    { key: "traveller", label: "a global problem solver" },
+    { key: "traveller", label: "an open-minded problem solver" },
   ],
   interactionHint: {
     icon: "🖱️",
@@ -51,9 +56,102 @@ export const sectionInteractionHints = {
   },
   experience: {
     icon: "🧭",
-    message: "Rotate the avatar",
+    message: "Rotate the avatar to trigger animations",
   },
 };
+
+export const educationContent = [
+  {
+    id: "uoft",
+    institution: "University of Toronto",
+    logo: "/assets/UofTLogo.png",
+    degree: "Bachelor of Applied Science and Engineering",
+    timeframe: "2020 – 2025",
+    details: [
+      "Major in Computer Engineering with a 12-month co-op",
+      "Minor in AI and ML",
+    ],
+    coursesLabel: "Courses of interest",
+    courses: [
+      "AI",
+      "ML",
+      "Deep Learning",
+      "Algorithms & Data Structures",
+      "Probabilistic Reasoning",
+      "Data Processing",
+      "Software Design & Engineering",
+      "Databases",
+      "Computer Organization / Networks / Security",
+      "Operating Systems",
+    ],
+    involvement: [
+      {
+        title: "Varsity Athlete (Fencing) | U. of Toronto Varsity Blues Team",
+        timeframe: "Sept. 2021 – May 2024",
+        logo: "/assets/UofTFencingLogo.jpeg",
+      },
+      {
+        title: "Skule French Society Webmaster",
+        timeframe: "Sept. 2022 - May 2025",
+        logo: "/assets/sfsLogo.png",
+      },
+      {
+        title:
+          "Best Rookie (2023), Best Male Athlete (2024) | U. of Toronto Triathlon Club",
+        timeframe: "May 2023 – May 2025",
+        logo: "/assets/UofTorontoLeaf.jpeg",
+      },
+      {
+        title:
+          "Intramural competitor in Soccer, Flag Football & Inner-tube Water Polo",
+        logo: "/assets/EAALogo.jpeg",
+      },
+      {
+        title:
+          'Winner of Best "U of T Hack" | U. of Toronto Hacks 12 Hackathon',
+        timeframe: "Jan. 2025",
+        logo: "/assets/Hacks12Logo.svg",
+      },
+      {
+        title: "IEEE Student Member",
+        timeframe: " Sept. 2021 – May 2025",
+        logo: "/assets/IEEELogo.jpg",
+      },
+    ],
+  },
+  {
+    id: "northeastern",
+    institution: "Northeastern University",
+    logo: "/assets/NortheasternLogo.png",
+    degree: "Master of Science in Artificial Intelligence",
+    timeframe: "2025 – Present",
+    details: [],
+    coursesLabel: "Courses of interest",
+    courses: [
+      "Computer Vision",
+      "Natural Language Processing",
+      "Deep Learning",
+    ],
+    involvement: [
+      {
+        title: "Northeastern Electric Racing Firmware Team Member",
+        logo: "/assets/NERLogo.png",
+      },
+      {
+        title: "Lead 360 Graduate Leader Institute Member",
+        logo: "/assets/lead360.jpeg",
+      },
+      {
+        title: "Northeastern Club Running Runner",
+        logo: "/assets/NUCRLogo.jpg",
+      },
+      {
+        title: "IEEE Member",
+        logo: "/assets/IEEELogo.jpg",
+      },
+    ],
+  },
+];
 
 export const aboutContent = {
   introTitle: "Hi, I'm Adrien",
