@@ -1,19 +1,30 @@
 import { Suspense, useState } from "react";
 import { Canvas } from "@react-three/fiber";
-import { workExperiences } from "../constants";
+import { workExperiences, sectionInteractionHints } from "../constants";
 import { OrbitControls } from "@react-three/drei";
 import CanvasLoader from "../components/CanvasLoader";
 import Developer from "../components/Developer";
+import { useMediaQuery } from "react-responsive";
 
 const Experience = () => {
   const [animationName, setAnimationName] = useState("idle");
+  const isMobile = useMediaQuery({ maxWidth: 768 });
+  const experienceHint = sectionInteractionHints.experience;
 
   return (
     <section className="c-space my-20" id="work">
       <div className="w-full text-white-600">
         <h3 className="head-text">Work Experience</h3>
         <div className="work-container">
-          <div className="work-canvas">
+          <div className="work-canvas relative">
+            {!isMobile && (
+              <div className="hidden md:flex items-center gap-3 absolute top-4 right-4 z-20 bg-black/70 border border-white/10 rounded-full px-4 py-2 text-white text-sm">
+                <span className="text-xl animate-bounce">{experienceHint.icon}</span>
+                <span className="font-medium text-white-500">
+                  {experienceHint.message}
+                </span>
+              </div>
+            )}
             <Canvas>
               <ambientLight intensity={7} />
               <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />

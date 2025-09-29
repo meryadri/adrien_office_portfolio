@@ -93,6 +93,14 @@ const Hero = () => {
           }`}
           style={{ transitionDuration: `${fadeDuration}ms` }}
         />
+        {!isMobile && (
+          <div className="hidden md:flex items-center gap-3 absolute bottom-24 right-10 z-20 bg-black/70 border border-white/10 rounded-full px-4 py-2 text-white text-sm">
+            <span className="text-xl animate-bounce">{heroContent.interactionHint.icon}</span>
+            <span className="font-medium text-white-500">
+              {heroContent.interactionHint.message}
+            </span>
+          </div>
+        )}
         {/* <Leva /> */}
         <Canvas className="w-full h-full">
           <Suspense fallback={<CanvasLoader />}>

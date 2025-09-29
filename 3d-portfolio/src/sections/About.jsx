@@ -3,11 +3,12 @@ import Globe from "react-globe.gl";
 import { Canvas } from "@react-three/fiber";
 import { PerspectiveCamera, Center, OrbitControls } from "@react-three/drei";
 import CanvasLoader from "../components/CanvasLoader";
-import { aboutContent } from "../constants";
+import { aboutContent, sectionInteractionHints } from "../constants";
 
 // import { Leva, useControls } from "leva";
 import Button from "../components/Button";
 import { useState, useRef, useEffect } from "react";
+import { useMediaQuery } from "react-responsive";
 import Coffee from "../components/Objects/Coffee";
 import Toolbox from "../components/Objects/Toolbox";
 import Keyboard from "../components/Objects/Keyboard";
@@ -16,6 +17,7 @@ import Telephone from "../components/Objects/Telephone";
 const About = () => {
   const [hasCopied, setHasCopied] = useState(false);
   const globeRef = useRef();
+  const isMobile = useMediaQuery({ maxWidth: 768 });
 
   // const pos = useControls({
   //   x: { value: 0, min: -8, max: 8 },
@@ -62,9 +64,16 @@ const About = () => {
     contactEmail,
     contactLinks,
   } = aboutContent;
+  const aboutHint = sectionInteractionHints.about;
 
   return (
-    <section className="c-space my-20" id="about">
+    <section className="c-space my-20 relative" id="about">
+      {!isMobile && (
+        <div className="hidden md:flex items-center gap-3 absolute top-6 right-6 z-20 bg-black/70 border border-white/10 rounded-full px-4 py-2 text-white text-sm">
+          <span className="text-xl animate-bounce">{aboutHint.icon}</span>
+          <span className="font-medium text-white-500">{aboutHint.message}</span>
+        </div>
+      )}
       <div className="grid xl:grid-cols-3 xl:grid-rows-6 md:grid-cols-2 grid-cols-1 gap-5 h-full">
         <div className="col-span-1 xl:row-span-3 ">
           <div className="grid-container">

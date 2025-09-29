@@ -1,14 +1,17 @@
 import { Suspense, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Center, OrbitControls } from "@react-three/drei";
-import { myProjects } from "../constants";
+import { myProjects, sectionInteractionHints } from "../constants";
 import CanvasLoader from "../components/CanvasLoader";
 import DemoComputer from "../components/DemoComputer";
+import { useMediaQuery } from "react-responsive";
 
 const Projects = () => {
   const projectCount = myProjects.length;
   const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
   const currentProject = myProjects[selectedProjectIndex];
+  const isMobile = useMediaQuery({ maxWidth: 768 });
+  const projectsHint = sectionInteractionHints.projects;
 
   const handleNavigation = (direction) => {
     setSelectedProjectIndex((prevIndex) => {
@@ -90,7 +93,15 @@ const Projects = () => {
             </button>
           </div>
         </div>
-        <div className="border border-black-300 bg-black-200 rounded-lg h-96 md:h-full">
+        <div className="relative border border-black-300 bg-black-200 rounded-lg h-96 md:h-full">
+          {!isMobile && (
+            <div className="hidden md:flex items-center gap-3 absolute top-4 right-4 z-20 bg-black/70 border border-white/10 rounded-full px-4 py-2 text-white text-sm">
+              <span className="text-xl animate-bounce">{projectsHint.icon}</span>
+              <span className="font-medium text-white-500">
+                {projectsHint.message}
+              </span>
+            </div>
+          )}
           <Canvas>
             <ambientLight intensity={Math.PI} />
             <directionalLight position={[10, 10, 5]} intensity={1} />

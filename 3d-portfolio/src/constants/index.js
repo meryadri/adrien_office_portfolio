@@ -34,6 +34,25 @@ export const heroContent = {
     { key: "learner", label: "a curious researcher" },
     { key: "traveller", label: "a global problem solver" },
   ],
+  interactionHint: {
+    icon: "🖱️",
+    message: "Move your mouse to explore the desks",
+  },
+};
+
+export const sectionInteractionHints = {
+  about: {
+    icon: "👆",
+    message: "Drag the 3D props to explore",
+  },
+  projects: {
+    icon: "🖱️",
+    message: "Spin the rig to preview each project",
+  },
+  experience: {
+    icon: "🧭",
+    message: "Rotate the avatar",
+  },
 };
 
 export const aboutContent = {
