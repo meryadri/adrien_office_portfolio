@@ -13,7 +13,7 @@ import Ground from "../components/Rooms/Ground";
 
 import HeroCamera from "../components/HeroCamera";
 import CanvasLoader from "../components/CanvasLoader";
-import Target from "../components/target";
+// import Target from "../components/target";
 import ReactLogo from "../components/ReactLogo";
 import Cube from "../components/Cube";
 import Rings from "../components/Rings";
@@ -95,7 +95,9 @@ const Hero = () => {
         />
         {!isMobile && (
           <div className="hidden md:flex items-center gap-3 absolute bottom-24 right-10 z-20 bg-black/70 border border-white/10 rounded-full px-4 py-2 text-white text-sm">
-            <span className="text-xl animate-bounce">{heroContent.interactionHint.icon}</span>
+            <span className="text-xl animate-bounce">
+              {heroContent.interactionHint.icon}
+            </span>
             <span className="font-medium text-white-500">
               {heroContent.interactionHint.message}
             </span>
@@ -157,7 +159,7 @@ const Hero = () => {
               )}
             </HeroCamera>
             <group>
-              <Target position={sizes.targetPosition} />
+              {/* <Target position={sizes.targetPosition} /> */}
               <ReactLogo position={sizes.reactLogoPosition} />
               <Cube position={sizes.cubePosition} />
               <Rings position={sizes.ringPosition} />
