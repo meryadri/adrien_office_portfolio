@@ -56,7 +56,7 @@ export const sectionInteractionHints = {
   },
   experience: {
     icon: "🧭",
-    message: "Rotate the avatar to trigger animations",
+    message: "Hover over experience to trigger animations",
   },
 };
 
@@ -188,7 +188,7 @@ export const aboutContent = {
     "I split my time between Boston and Toronto and am available to work throughout the United States and Canada.",
   journeyTitle: "My Journey",
   journeyBody:
-    "I completed my BASc in Computer Engineering at the University of Toronto and recently began an MS in AI at Northeastern. At FedEx Express, I shipped automation and ML classification pipelines that accelerated brokerage workflows for top customers, and at GE I boosted audit accuracy while integrating real-time Spark data flows. I keep building award-winning AI products—from adaptive language-learning experiences to team-matching platforms—driving everything from research to production.",
+    "I completed my BASc in Computer Engineering at the University of Toronto and am currently pursuing an MS in AI at Northeastern. Previously, as a Founding Member of Technical Staff at Internet Backyard, I built agentic ML workflows and a FinOps platform to automate quoting and billing for data center companies. At FedEx and GE, I shipped ML pipelines and automation that accelerated brokerage workflows and boosted audit accuracy. I keep building award-winning AI products, driving everything from research to production.",
   contactCta: "Contact Me",
   contactEmail: "adrienmeryusa@gmail.com",
   contactPhone: "+16473829631",
@@ -498,16 +498,26 @@ export const calculateSizes = (isSmall, isMobile, isTablet) => {
 export const workExperiences = [
   {
     id: 1,
+    name: "Internet Backyard",
+    pos: "Founding Member of Technical Staff",
+    duration: "September 2025 – February 2026",
+    title:
+      "Engineered agentic ML workflows and full-stack software solutions to automate quoting and billing operations for data center companies. Built a FinOps platform and financial infrastructure for compute, reducing manual overhead in financial processes and accelerating quote-to-invoice cycles.",
+    icon: "/assets/IB.svg",
+    animation: "victory",
+  },
+  {
+    id: 2,
     name: "FedEx Express",
     pos: "Associate CE Engineer",
     duration: "May 2023 – July 2024",
     title:
       "Developed applications to interface between business databases and systems, and created automation solutions that reduced brokering data input time by up to 40%. Collaborated with brokers to ensure alignment with their needs. Additionally, optimized the assignment of tariff classification numbers for high-value goods, reducing assignment time by 30% for the top 10 FedEx customers.",
     icon: "/assets/fedex.svg",
-    animation: "victory",
+    animation: "salute",
   },
   {
-    id: 2,
+    id: 3,
     name: "General Electric Corporate",
     pos: "DTLP Intern",
     duration: "June – August 2022",
